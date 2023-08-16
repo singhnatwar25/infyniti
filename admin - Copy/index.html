@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <!-- Include Slick Slider CSS -->
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <!-- Include Slick Slider Theme CSS (optional) -->
+        <!-- <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+
+    </head>
+
+    <title>Infyniti Software Solutions</title>
+
+    <style>
+        /* Reset default margin and padding */
+        body,
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            padding: 2px;
+            background-color: black;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            color: whitesmoke;
+            margin-left: 32px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 50px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            transition: color 0.6s ease;
+            font-size: 14px;
+
+        }
+
+        .navbar ul li a:hover {
+            color: rgb(219, 215, 215);
+        }
+
+
+        .contact-button {
+            padding: 10px 20px;
+            background-color: lightpink;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* About section styles */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 80px 0;
+            /*      background-image: linear-gradient(to right, #1a1a1a, #3a3a3a); */
+            color: rgb(230, 9, 64);
+            background-color: #f5f5f5;
+        }
+
+        .about-content {
+            max-width: 500px;
+            padding: 20px;
+
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgb(0, 0, 0);
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hover effect for the about section */
+        #about:hover {
+            background-color: #fff;
+            transition: background-image 0.5s ease, color 0.5s ease;
+        }
+
+        #about:hover .about-image img {
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+
+        /* Non-transparent header on scroll */
+
+
+
+
+
+        #services {
+            background-color: #b134ad;
+            padding: 80px 0;
+            color: #fff;
+        }
+
+
+
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px;
+            background-color: #a43483;
+
+        }
+
+        .service {
+            width: 20%;
+            text-align: center;
+            padding: 20px;
+            background-color: #a43483;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .service img {
+            width: 260px;
+            height: 140px;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: purple;
+        }
+
+        .service p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: purple;
+        }
+
+        /* Blog section styles */
+    </style>
+</head>
+
+<body>
+    <header class="transparent-header">
+        <nav class="navbar">
+            <div class="logo">
+                Infyniti
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+             <!-- Add this inside the <nav> element -->
+<div class="menu-icon" onclick="toggleMobileMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+        </nav>
+        <!-- <button class="contact-button">Contact Us</button> -->
+    </header>
+   
+  
+  <!-- Add this script at the end of the <body> element -->
+  <script>
+    function toggleMobileMenu() {
+      const navList = document.querySelector('.navbar ul');
+      navList.classList.toggle('active');
+    }
+  </script>
+  
+
+    <style>
+        /* Small screens */
+@media (max-width: 600px) {
+    .navbar ul {
+      flex-direction: column;
+      align-items: start;
+
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 20%;
+      z-index: 1;
+      display: none;
+    }
+  
+    .navbar ul.active {
+      display: flex;
+    }
+  
+    .navbar ul li {
+      margin: 0;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .navbar ul li a {
+      color: white;
+    }
+  
+    .navbar .menu-icon {
+      display: block;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    .contact-form {
+      margin-right: 0;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .services-container {
+      flex-direction: column;
+    }
+  
+    .service {
+      flex: 0 0 100%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1025px) {
+    .navbar ul {
+      display: flex;
+    }
+  
+    .navbar .menu-icon {
+      display: none;
+    }
+  }
+  
+    </style>
+    <section id="banner">
+        <div class="slider">
+            <div class="slide">
+                <img src="2.jpg" alt="Slider Image 1">
+                <div class="slide-text">Text for Image 1</div>
+            </div>
+            <div class="slide">
+                <img src="2.jpg" alt="Slider Image 2">
+                <div class="slide-text">Text for Image 2</div>
+            </div>
+            <div class="slide">
+                <img src="2.jpg" alt="Slider Image 3">
+                <div class="slide-text">Text for Image 3</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <style>
+        #banner {
+            position: relative;
+            width: 100%;
+
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            max-height: 300px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            width: fit-content;
+        }
+
+        .slide-text {
+            position: absolute;
+            left: 40px;
+            /* Adjust this value to position the text as desired */
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+        }
+    </style>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 6000, // Change slide every 5 seconds
+                arrows: false,
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+
+
+
+
+    </section>
+    <section id="about">
+        <!-- About section content here -->
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>TechFusion Solutions is a dynamic IT company committed to delivering innovative solutions to our clients.
+                With a dedicated team of experts, we aim to bring technology-driven success to businesses of all sizes.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="team.webp" alt="TechFusion Team">
+        </div>
+    </section>
+
+
+
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service">
+                <img src="https://source.unsplash.com//rA5MU4pXnWE" alt="Service 1">
+                <h3>Web Development</h3>
+                <p>We offer custom web development solutions tailored to your business needs.</p>
+            </div>
+            <div class="service">
+                <img src="https://source.unsplash.com//9e9PD9blAto" alt="Service 2">
+                <h3>Mobile Apps</h3>
+                <p>Create engaging mobile apps for both iOS and Android platforms.</p>
+            </div>
+            <div class="service">
+                <img src="https://source.unsplash.com//wD1LRb9OeEo" alt="Service 3">
+                <h3>IT Consulting</h3>
+                <p>Get expert advice and consulting to optimize your IT infrastructure.</p>
+            </div>
+            <!-- Additional Services -->
+            <div class="service">
+                <img src="https://source.unsplash.com//BM3U_D2lygo" alt="Service 4">
+                <h3>Graphic Design</h3>
+                <p>Transform your ideas into visually stunning graphics and designs.</p>
+            </div>
+            <div class="service">
+                <img src="https://source.unsplash.com//l5if0iQfV4c" alt="Service 5">
+                <h3>Digital Marketing</h3>
+                <p>Reach your target audience with effective digital marketing strategies.</p>
+            </div>
+            <div class="service">
+                <img src="https://source.unsplash.com//Eh1xd5xDE-s" alt="Service 6">
+                <h3>Cloud Solutions</h3>
+                <p>Harness the power of cloud technology to enhance your business operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #services {
+            background-color: #9e2b92;
+            padding: 80px 0;
+            color: #fff;
+
+        }
+
+        #services h2 {
+            text-align: center;
+            padding-bottom: 3%;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: stretch;
+            margin: 10px;
+        }
+
+        .service {
+            width: 1%;
+            flex: 0 0 30%;
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 60px;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .service img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-container">
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://source.unsplash.com//K21Dn4OVxNw" alt="Blog Image 1">
+                </div>
+                <h4>New Ai Neo World</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="read-more">Read More</p>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://source.unsplash.com//IT6aov1ScW0" alt="Blog Image 2">
+                </div>
+                <h4>Post Title 2</h4>
+                <p>Nulla facilisi. Sed ac elit sed urna feugiat sollicitudin.</p>
+                <p class="read-more">Read More</p>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="https://source.unsplash.com//sp_pcgjPxgI" alt="Blog Image 3">
+                </div>
+                <h4>Post Title 3</h4>
+                <p>Ut interdum libero ut dui scelerisque, nec varius justo malesuada.</p>
+                <p class="read-more">Read More</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #blog {
+            background-color: #fff;
+            padding: 50px 0;
+            color: white;
+
+        }
+
+        #blog h2 {
+            text-align: center;
+            padding-bottom: 20px;
+            color: #6d07d4;
+        }
+
+        .blog-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .blog-post {
+            position: relative;
+            width: 25%;
+            height: 80%;
+            background: linear-gradient(to bottom, #3a3a3a, #1a1a1a);
+            border-radius: 10px;
+            padding: 0px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin: 2% 5%;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-image {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .blog-image img {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .blog-post h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: textWrite 2s forwards;
+            text-align: center;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            line-height: 1.5;
+            opacity: 1;
+            /* Initially hide the text */
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .blog-post .read-more {
+            cursor: pointer;
+            color: rgb(239, 236, 237);
+            display: inline-block;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .blog-post .read-more:hover {
+            text-decoration: underline;
+            text-align: center;
+
+        }
+
+        .blog-post:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('3.jpg');
+            /* Add your background image URL */
+            background-size: 100% auto;
+            /* Set the height twice the width */
+            opacity: 0.6;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-post:hover:before {
+            opacity: 1;
+            /* Hide the background image on hover */
+        }
+
+        .blog-post:hover p {
+            opacity: 1;
+            /* Show the text on hover */
+            animation: textFadeIn 0.5s forwards;
+        }
+
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textWrite {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        // JavaScript to toggle the display of full content on "Read More" click
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const post = button.parentNode;
+                const content = post.querySelector('p');
+                content.style.opacity = '1';
+                content.style.maxHeight = 'none';
+                button.style.display = 'none';
+            });
+        });
+    </script>
+
+
+
+
+    <section id="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="testimonial-image">
+                        <img src="https://source.unsplash.com//5KyzZbonwqQ" alt="Testimonial Person 1">
+                    </div>
+                    <div class="testimonial-author">John Doe</div>
+                    <div class="testimonial-text">"TechFusion Solutions helped transform our business with their
+                        innovative IT solutions. Their team is highly skilled and professional."</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="testimonial-image">
+                        <img src="https://source.unsplash.com//5KyzZbonwqQ" alt="Testimonial Person 2">
+                    </div>
+                    <div class="testimonial-author">Jane Smith</div>
+                    <div class="testimonial-text">"I am impressed by the level of expertise TechFusion Solutions brought
+                        to the table. They delivered outstanding results."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        #testimonials {
+            background-color: white;
+            padding: 80px 0;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+    
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 500px;
+            text-align: center;
+        }
+    
+        .testimonial-content {
+            margin-bottom: 20px;
+        }
+    
+        .testimonial-image img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    
+        .testimonial-author {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+    </style>
+    
+    
+
+
+    <style>
+        #contact {
+            background-color: #c9d3db;
+            padding: 90px 0;
+            color: lightpink;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            padding-left: 20px;
+            color: white;
+            padding: 50px 20px;
+
+        }
+
+
+        .center-image {
+            text-align: center;
+
+            /* Center the image horizontally */
+            max-width: 50%;
+            /* Ensure the image doesn't exceed its container's width */
+            max-height: 100%;
+            /* Maintain the image's aspect ratio */
+
+
+        }
+
+        .center-image img {
+            max-width: 100%;
+            /* Adjust this value as needed */
+            max-height: 100%;
+            /* Adjust this value as needed */
+            border-radius: 12px;
+
+
+
+        }
+
+
+
+        .contact-form {
+            flex: 1;
+            max-width: 400px;
+            padding: 38px;
+            margin-right: 34px;
+            background-color: rgb(247, 244, 244);
+            border-radius: 10px;
+        }
+
+        .contact-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgb(102, 187, 230);
+            border-radius: 5px;
+            background-color: transparent;
+            color: rgb(247, 244, 245);
+        }
+
+        .contact-textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgb(120, 182, 236);
+            border-radius: 5px;
+            background-color: transparent;
+            color: rgb(248, 246, 247);
+        }
+
+        .contact-submit {
+            padding: 10px 20px;
+            background-color: rgb(195, 94, 169);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-submit:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+
+
+    <section id="contact">
+        <div class="social-icons">
+            <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div> <!-- Facebook -->
+            <div class="social-icon"><i class="fa-brands fa-square-instagram"></i></div> <!-- Instagram -->
+            <div class="social-icon"><i class="fa-brands fa-youtube"></i></div> <!-- YouTube -->
+            <div class="social-icon"><i class="fa-brands fa-square-x-twitter"></i></div> <!-- Twitter -->
+        </div>
+        <div class="center-image">
+            <img src="3.jpg" alt="Center Image">
+        </div>
+        <div class="contact-form">
+            <form>
+                <input type="text" class="contact-input" placeholder="Your Name">
+                <input type="email" class="contact-input" placeholder="Your Email">
+                <textarea class="contact-textarea" placeholder="Your Message"></textarea>
+                <button type="submit" class="contact-submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #000000;
+            padding: 80px 0;
+            color: rgb(248, 245, 246);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .footer-logo span {
+            font-size: 24px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+        }
+
+        .footer-social-icon {
+            font-size: 24px;
+            color: rgb(247, 244, 245);
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-icon:hover {
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-link {
+            margin: 0 10px;
+            color: rgb(247, 243, 244);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+        }
+    </style>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="footer-logo.png" alt="Footer Logo">
+            <span>Infyniti.io</span>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-facebook-f"></i></a> <!-- Facebook -->
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-square-instagram"></i></a> <!-- Instagram -->
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-youtube"></i></a> <!-- YouTube -->
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-square-x-twitter"></i></a> <!-- Twitter -->
+        </div>
+        <div class="footer-copyright">
+            &copy; 2023 Infyniti Software Soluation. <br> All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Notice</a>
+            <a href="#" class="footer-link">Cookie Policy</a>
+            <a href="#" class="footer-link">Disclaimer</a>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
